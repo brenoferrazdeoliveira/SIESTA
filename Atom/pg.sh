@@ -2,7 +2,7 @@
 #
 # pg.sh -- Script to run pseudopotential generation calculations
 #
-# Usage: pg.sh <name.inp>
+# Usage: pgatom <name.inp>
 #
 if [ "$#" != 1 ] 
 then
@@ -29,8 +29,9 @@ if [ -d $name ]; then
 		fi
 fi
 # Caminhos & definições
-UTILS_DIR="/home/dxt/Github/SIESTA/Atom"
-prog="/home/siesta/atm"
+default='sh erro.sh'
+caminho=${UTILS_DIR:-$default}
+prog=${ATOM_PROGRAM:-$default}
 #Myprog="/home/dxt/Github/SIESTA/Atom/testes"
 #
 mkdir $name ; cd $name
@@ -51,7 +52,7 @@ cp VPSFMT ../$name.psf
 #  Copy plotting scripts
 #
 for i in style charge vcharge vspin coreq pots pseudo scrpots subps ; do
-	cp -f ${UTILS_DIR}/$i.plt .
+	cp -f ${caminho}/$i.plt .
 done
 #
 dialog --stdout --backtitle 'Developed by Rafael Dexter' \
