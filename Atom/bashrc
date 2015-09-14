@@ -116,5 +116,6 @@ fi
 alias ptatom='sh /media/HD250/Git/SIESTA/Atom/pt.sh'
 alias fullptatom='sh /media/HD250/Git/SIESTA/Atom/pt_dxt.sh'
 alias pgatom='sh /media/HD250/Git/SIESTA/Atom/pg.sh'
-alias ATOM_PROGRAM='/home/atm.exe ; export ATOM_PROGRAM'
+ATOM_PROGRAM='/home/atm.exe' 
+export ATOM_PROGRAM
 alias UTILS_DIR='/media/HD250/Git/SIESTA/Atom'
